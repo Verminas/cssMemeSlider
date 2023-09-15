@@ -3,23 +3,25 @@
     height: 100vh;
     background: rgb(64,64,64);
     background: radial-gradient(circle, rgba(64,64,64,1) 0%, rgba(0,0,0,1) 100%);
-    padding: 1.5% 2%;
+    /* padding: 1.5% 2%; */
     display: flex;
     justify-content: center;
     border: 1px solid white;
     font-size: 14rem;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 0.15rem;
-    /* overflow: hidden; */
+     /* overflow: hidden; */
+    
 }
 .wrapper-memeslider{
-     width: 96vw;
-    /* height: 97vh;  */
+     width: 90vw;
+    height: 90vh; 
     border: 1px solid white;
+    margin: auto auto;
 
 }
 .wrapper-inputs{
-    /* display: none; */
+    display: none;
     border: 1px solid white;
 }
 .wrapper-slider{
@@ -28,30 +30,31 @@
     border: 1px solid white;
     display: flex;
     display: flex;
-    gap: 2%;
+    /* gap: 2%; */
     transition: transform 0.5s;
-    /* overflow: hidden; */
+     overflow: hidden;
     
 }
 .slide{
-    width: 96vw;
-    height: 75vh;
+    display: flex;
+    width: 90vw;
+    height: 70vh;
     border-radius: 0.7%;
     /* overflow: hidden; */
+    
+    /*убрала пока св-во флексшринк*/
     flex-shrink: 0;
+
     /* border: 1px solid white; */
+    transition: all 0.5s ease-in-out;
 }
-.slide{
-    display: flex;
-    
-}
-.slide.one{
-    display: flex;
-}
+
 .slide img{
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     border-radius: 0.7%;
+    margin: 0 auto;
+    transition: all 0.5s ease-in-out;
     /* object-fit:fill; */
     /* overflow: hidden; */
     /* margin-right: 20%; */
@@ -60,14 +63,22 @@
     border: 1px solid white;
     margin-top: 2%;
     display: flex;
-    width: 96vw;
-    height: 14.3vh;
+    width: 90vw;
+    height: 16vh;
     background-color: grey;
 }
 .wrapper-text{
     border: 1px solid white;
-    width: 75%;
-    height: 100%;
+    width: 67.5vw;
+    height: 16vh;
+    display: flex;
+     overflow-x: hidden;
+}
+.text-carusel{
+    display: flex;
+    width:337.5vw;
+    transition: all 0.5s ease-in-out;
+    
 }
 .wrapper-labels{
     border: 1px solid white;
@@ -79,20 +90,87 @@
 } 
 .text-slide{
     color: white;
-    font-size: 12%;
+    font-size: 2rem;
+    width: 67.5vw;
+    background-color: blueviolet;
+    border: 1px solid aqua;
+    /* opacity: 0; */
 }
-.labels{
+
+
+/*для картинок при нажатии кнопок*/
+#slide1:checked ~ .slide.one{
+    transform: translateX(0);
+    opacity: 1;
+ }
+ #slide2:checked ~ .slide.two{
+     transform: translateX(-100%);
+     opacity: 1;
+  }
+  #slide3:checked ~ .slide.three{
+     transform: translateX(-200%);
+     opacity: 1;
+  }
+  #slide4:checked ~ .slide.four{
+     transform: translateX(-300%);
+     opacity: 1;
+  }
+  #slide5:checked ~ .slide.five{
+     transform: translateX(-400%);
+     opacity: 1;
+  }
+ 
+ 
+
+
+
+/*для текста при нажатии кнопок*/
+#slide1:checked ~ .text-slide.one{
+   transform: translateX(0);
+   opacity: 1;
+}
+#slide2:checked ~ .text-carusel{
+    transform: translateX(-67.5vw);
+    opacity: 1;
+ }
+ #slide3:checked ~ .text-carusel{
+    transform: translateX(-135vw);
+    opacity: 1;
+ }
+ #slide4:checked ~ .text-carusel{
+    transform: translateX(-202.5vw);
+    opacity: 1;
+ }
+ #slide5:checked ~ .text-carusel{
+    transform: translateX(-270vw);
+    opacity: 1;
+ }
+
+
+ /*кнопки и состояния*/
+ .labels{
     background-color: yellow;
     /* width: 30%;
     height: 30%; */
     display: flex;
     gap: 1rem;
     padding-top: 2%;
-    padding-right: 2%;
+    padding-right: 3%;
+}
+.labels label{
+    padding: 2rem 1.5rem;
+    cursor: pointer;
+    width: 5rem;
+    height: 3.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
 }
 .wrapper-circle{
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 3.2rem;
+    height: 2rem;
     border-radius: 50%;
     border: 0.25rem solid #17a0b3;
     background-color: #17a0b3;
@@ -101,50 +179,39 @@
     align-items: center;
 }
 .circle{
-    /* display: none; */
+    opacity: 0;
     background-color: black;
-    width: 1rem;
-    height: 1rem;
+    width: 1.3rem;
+    height: 1.3rem;
     border-radius: 50%;
 }
-
-/* .slider-input:checked ~ .wrapper-slider {
-    transform: translateX(-100vw);
-  } */
-
-  .slider-input:checked ~  .slide {
-    flex-shrink: 0;
+.labels label:hover .wrapper-circle{
+    background-color: white;
+    border: 0.25rem solid white;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.labels label:active .wrapper-circle{
+    border: 0.25rem solid white;
+    transition: all 0.5s ease-in-out;
+}
+.labels label:active .circle{
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
 }
 
-.slider-input:checked ~ .wrapper-text-labels .text-slide {
-    display: none;
+/*НЕ СРАБАТЫВАЕТ СОСТОЯНИЕ CHECKED*/
+input[type="radio"]:checked + .wrapper-circle .circle {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
 }
 
-.slider-input:checked ~ .wrapper-text-labels .text-slide:checked {
-    display: block;
-}
-
-.slider-input:checked ~ .wrapper-text-labels .labels .circle {
-    background-color: black;
-}
-
-input#slide1:checked ~ .wrapper-slider > .slide.one {
-    transform: translateX(0);
-}
-
-input#slide2:checked ~ .wrapper-slider > .slide.two {
-    transform: translateX(-100%);
-}
-
-input#slide3:checked ~ .wrapper-slider > .slide.three {
-    transform: translateX(-200%);
-}
-
-input#slide4:checked ~ .wrapper-slider > .slide.four {
-    transform: translateX(-300%);
-}
-
-input#slide5:checked ~ .wrapper-slider > .slide.five {
-    transform: translateX(-400%);
-}
-
+input[type="radio"]:checked ~ .wrapper-circle {
+    background-color: transparent;
+    border: 0.25rem solid #17a0b3;
+ }
+ 
+  input[type="radio"]:checked ~ .wrapper-circle .circle {
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+ }
