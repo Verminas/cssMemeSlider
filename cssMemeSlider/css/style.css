@@ -180,15 +180,6 @@
     height: 95%;
     border-radius: 50%;
 }
-.labels label:checked .wrapper-circle .circle {
-  opacity: 1;
-  transition: all 0.3s ease-in-out;
-}
-
-.labels label:checked .wrapper-circle {
-  background-color: transparent;
-  border: 0.25rem solid #17a0b3;
-}
 
 .labels label:hover .wrapper-circle{
     background-color: white;
@@ -214,4 +205,14 @@
     border: 0.25rem solid #17a0b3; 
     transition: all 0.3s ease-in-out;
     background-color: black;
+}
+
+/* КНОПКА ВЫБРААН И НА НА НЕЕ НАВЕЛИСЬ*/
+.slider-input[id="slide1"]:checked ~ .wrapper-text-labels label[for="slide1"]:hover .wrapper-circle,
+.slider-input[id="slide2"]:checked ~ .wrapper-text-labels label[for="slide2"]:hover .wrapper-circle,
+.slider-input[id="slide3"]:checked ~ .wrapper-text-labels label[for="slide3"]:hover .wrapper-circle,
+.slider-input[id="slide4"]:checked ~ .wrapper-text-labels label[for="slide4"]:hover .wrapper-circle,
+.slider-input[id="slide5"]:checked ~ .wrapper-text-labels label[for="slide5"]:hover .wrapper-circle {
+    border: 0.25rem solid white;
+    transition: all 0.3s ease-in-out;
 }
