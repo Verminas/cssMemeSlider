@@ -201,14 +201,15 @@
     
     gap: 2%;
    padding: 1%;
-   /* margin-top: 2%; */
+   margin-top: 3%;
     
 }
 .labels label{
-    padding: 8%;
+  
+    /* padding: 8%; */
     cursor: pointer;
-    width: 10%;
-    height: 10%;
+    width: 50%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -218,8 +219,8 @@
 }
 
 .wrapper-circle{
-    width: 3.2rem;
-    height: 2rem;
+    width: 50%;
+    height: 50%;
     border-radius: 50%;
     border: 0.25rem solid #17a0b3;
     background-color: #17a0b3;
@@ -230,8 +231,8 @@
 .circle{
     opacity: 0;
     background-color: black;
-    width: 1.3rem;
-    height: 1.3rem;
+    width: 95%;
+    height: 95%;
     border-radius: 50%;
 }
 .labels label:checked .wrapper-circle .circle {
@@ -265,9 +266,8 @@
 
 
 /*НЕ СРАБАТЫВАЕТ СОСТОЯНИЕ CHECKED*/
-.slider-input:checked .wrapper-circle .circle {
-    opacity: 1;
-    transition: all 0.3s ease-in-out;
+.slider-input:checked ~ .wrapper-text-labels  .wrapper-circle{
+    /* background-color: blue; */
 }
 
 .slider-input:checked .wrapper-circle {
