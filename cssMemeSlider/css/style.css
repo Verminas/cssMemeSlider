@@ -266,8 +266,12 @@
 
 
 /*НЕ СРАБАТЫВАЕТ СОСТОЯНИЕ CHECKED*/
-.slider-input:checked ~ .wrapper-text-labels  .wrapper-circle{
-    /* background-color: blue; */
+.slider-input[id="slide1"]:checked ~ .wrapper-text-labels label[for="slide1"] .wrapper-circle,
+.slider-input[id="slide2"]:checked ~ .wrapper-text-labels label[for="slide2"] .wrapper-circle,
+.slider-input[id="slide3"]:checked ~ .wrapper-text-labels label[for="slide3"] .wrapper-circle,
+.slider-input[id="slide4"]:checked ~ .wrapper-text-labels label[for="slide4"] .wrapper-circle,
+.slider-input[id="slide5"]:checked ~ .wrapper-text-labels label[for="slide5"] .wrapper-circle {
+    background-color: blue; 
 }
 
 .slider-input:checked .wrapper-circle {
