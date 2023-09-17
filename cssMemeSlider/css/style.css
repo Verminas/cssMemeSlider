@@ -27,7 +27,7 @@ background: linear-gradient(278deg, rgba(99,34,195,1) 0%, rgba(45,241,253,1) 100
      overflow-x: hidden;
 
      /*тень для контейнера со слайдерами, потом решу удалить или нет*/
-     box-shadow: inset 200px 200px 200px rgba(255, 255, 255, 0.1), inset -200px -200px 200px rgba(255, 255, 255, 0.1);
+     box-shadow: inset 10rem 10rem 10rem rgba(255, 255, 255, 0.1), inset -10rem -10rem 10rem rgba(255, 255, 255, 0.1);
     
 }
 .slide{
