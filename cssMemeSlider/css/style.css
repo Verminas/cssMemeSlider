@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     border: 1px solid white;
-    font-size: 14rem;
+    font-size: 12rem;
     font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 0.15rem;
 }
@@ -62,13 +62,15 @@
     
 }
 .wrapper-text{
-    width: 60vw;
+    
+  width: 60vw;
     height: 100%;
     display: flex;
      overflow-x: hidden;
 }
 .text-carusel{
-    display: flex;
+  margin-top: 3%;  
+  display: flex;
     transition: all 0.5s ease-in-out;
 }
 .wrapper-labels{
@@ -78,7 +80,7 @@
 } 
 .text-slide{
     color: white;
-    font-size: 2rem;
+    font-size: 1.4rem;
     width: 60vw;
 }
 
