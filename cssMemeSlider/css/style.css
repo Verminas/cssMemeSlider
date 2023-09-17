@@ -20,19 +20,19 @@
     margin: auto auto;
 
 }
-.wrapper-inputs{
+.slider-input{
     display: none;
     border: 1px solid white;
 }
 .wrapper-slider{
     /* width: 100%; */
     border-radius: 0.7%;
-    border: 1px solid white;
+    border: 1px solid red;
     display: flex;
     display: flex;
     /* gap: 2%; */
     transition: transform 0.5s;
-     overflow: hidden;
+     overflow-x: hidden;
     
 }
 .slide{
@@ -41,12 +41,31 @@
     height: 70vh;
     border-radius: 0.7%;
     /* overflow: hidden; */
+    /* opacity: 0; */
     
     /*убрала пока св-во флексшринк*/
     flex-shrink: 0;
+    /* visibility: hidden; */
 
     /* border: 1px solid white; */
-    transition: all 0.5s ease-in-out;
+    /* transition: all 0.5s ease-in-out; */
+    
+
+
+
+    
+}
+
+.slide.one, .slide.two, .slide.three, .slide.four, .slide.five{
+    opacity: 0;
+    animation: fadeOut 0.5s ease-in-out;
+    /* transition: opacity 0.5s ease-in-out; */
+}
+
+.text-slide.one, .text-slide.two, .text-slide.three, .text-slide.four, .text-slide.five{
+    opacity: 0;
+    animation: fadeOut 0.5s ease-in-out;
+    /* transition: opacity 0.5s ease-in-out; */
 }
 
 .slide img{
@@ -54,10 +73,6 @@
     height: auto;
     border-radius: 0.7%;
     margin: 0 auto;
-    transition: all 0.5s ease-in-out;
-    /* object-fit:fill; */
-    /* overflow: hidden; */
-    /* margin-right: 20%; */
 }
 .wrapper-text-labels{
     border: 1px solid white;
@@ -65,7 +80,7 @@
     display: flex;
     width: 90vw;
     height: 16vh;
-    background-color: grey;
+    
 }
 .wrapper-text{
     border: 1px solid white;
@@ -76,8 +91,10 @@
 }
 .text-carusel{
     display: flex;
-    width:337.5vw;
+    /* width:337.5vw; */
     transition: all 0.5s ease-in-out;
+    background-color: blueviolet;
+    border: 1px solid aqua;
     
 }
 .wrapper-labels{
@@ -92,58 +109,81 @@
     color: white;
     font-size: 2rem;
     width: 67.5vw;
-    background-color: blueviolet;
-    border: 1px solid aqua;
+    
     /* opacity: 0; */
 }
 
 
-/*для картинок при нажатии кнопок*/
-#slide1:checked ~ .slide.one{
+/*для картинок при нажатии кнопок . не работают эти стили */
+#slide1:checked ~ .wrapper-slider >.slide.one{
+    animation: fadeIn 0.5s ease-in-out forwards;
     transform: translateX(0);
-    opacity: 1;
  }
- #slide2:checked ~ .slide.two{
-     transform: translateX(-100%);
-     opacity: 1;
+ #slide2:checked ~ .wrapper-slider >.slide.two{
+    animation: fadeIn 0.5s ease-in-out forwards;
+    transform: translateX(-100%);
   }
-  #slide3:checked ~ .slide.three{
-     transform: translateX(-200%);
-     opacity: 1;
+  #slide3:checked ~ .wrapper-slider >.slide.three{
+    animation: fadeIn 0.7s ease-in-out forwards; 
+    transform: translateX(-200%);
   }
-  #slide4:checked ~ .slide.four{
-     transform: translateX(-300%);
-     opacity: 1;
+  #slide4:checked ~ .wrapper-slider >.slide.four{
+    animation: fadeIn 0.8s ease-in-out forwards; 
+    transform: translateX(-300%);
   }
-  #slide5:checked ~ .slide.five{
-     transform: translateX(-400%);
-     opacity: 1;
+  #slide5:checked ~ .wrapper-slider >.slide.five{
+    animation: fadeIn 0.9s ease-in-out forwards;
+    transform: translateX(-400%);
   }
+
+
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  /* .slide {
+    animation: fadeIn 0.5s ease-in-out;
+  }
+  */
  
- 
 
 
 
-/*для текста при нажатии кнопок*/
-#slide1:checked ~ .text-slide.one{
+/*для текста при нажатии кнопок не работают для текста*/
+#slide1:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel > .text-slide.one{
    transform: translateX(0);
-   opacity: 1;
+   animation: fadeIn 1s ease-in-out forwards;
 }
-#slide2:checked ~ .text-carusel{
-    transform: translateX(-67.5vw);
-    opacity: 1;
+#slide2:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel  >  .text-slide.two{
+    transform: translateX(-100%);
+    animation: fadeIn 1s ease-in-out forwards;
  }
- #slide3:checked ~ .text-carusel{
-    transform: translateX(-135vw);
-    opacity: 1;
+ #slide3:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel  > .text-slide.three{
+    transform: translateX(-200%);
+    animation: fadeIn 1s ease-in-out forwards;
  }
- #slide4:checked ~ .text-carusel{
-    transform: translateX(-202.5vw);
-    opacity: 1;
+ #slide4:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel  > .text-slide.four{
+    transform: translateX(-300%);
+    animation: fadeIn 1s ease-in-out forwards;
  }
- #slide5:checked ~ .text-carusel{
-    transform: translateX(-270vw);
-    opacity: 1;
+ #slide5:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel  > .text-slide.five{
+    transform: translateX(-400%);
+    animation: fadeIn 1s ease-in-out forwards;
  }
 
 
@@ -201,17 +241,17 @@
 }
 
 /*НЕ СРАБАТЫВАЕТ СОСТОЯНИЕ CHECKED*/
-input[type="radio"]:checked + .wrapper-circle .circle {
+.slider-input:checked + .wrapper-circle .circle {
     opacity: 1;
     transition: all 0.3s ease-in-out;
 }
 
-input[type="radio"]:checked ~ .wrapper-circle {
+.slider-input:checked ~ .wrapper-circle {
     background-color: transparent;
     border: 0.25rem solid #17a0b3;
  }
  
-  input[type="radio"]:checked ~ .wrapper-circle .circle {
+  .slider-input:checked ~ .wrapper-circle .circle {
     opacity: 1;
     transition: all 0.3s ease-in-out;
  }
