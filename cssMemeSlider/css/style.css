@@ -79,6 +79,7 @@
     border: 1px solid white;
     margin-top: 2vh;
     display: flex;
+    justify-content: space-between;
     width: 90vw;
     height: 18vh;
     
@@ -86,7 +87,7 @@
 .wrapper-text{
     border: 1px solid white;
     width: 60vw;
-    height: 18vh;
+    height: 100%;
     display: flex;
      overflow-x: hidden;
 }
@@ -99,11 +100,13 @@
     
 }
 .wrapper-labels{
-    border: 1px solid white;
+    border: 1px solid black;
     width: 30vw;
+
     height: 100%;
     display: flex;
-    justify-content: flex-end;
+    /* justify-content: flex-end;  */
+    
     
 } 
 .text-slide{
@@ -192,24 +195,28 @@
  /*кнопки и состояния*/
  .labels{
     /* background-color: yellow; */
-    /* width: 30%;
-    height: 30%; */
+     width: 100%;
+    /* height: 30%; */
     display: flex;
-    gap: 1rem;
-    padding-top: 2%;
-    padding-right: 3%;
+    
+    gap: 2%;
+   padding: 1%;
+   /* margin-top: 2%; */
+    
 }
 .labels label{
-    padding: 2rem 1.5rem;
+    padding: 8%;
     cursor: pointer;
-    width: 5rem;
-    height: 3.2rem;
+    width: 10%;
+    height: 10%;
     display: flex;
     justify-content: center;
     align-items: center;
+    /* justify-self: flex-end; */
     
     
 }
+
 .wrapper-circle{
     width: 3.2rem;
     height: 2rem;
@@ -227,6 +234,18 @@
     height: 1.3rem;
     border-radius: 50%;
 }
+.labels label:checked .wrapper-circle .circle {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.labels label:checked .wrapper-circle {
+  background-color: transparent;
+  border: 0.25rem solid #17a0b3;
+}
+
+
+
 .labels label:hover .wrapper-circle{
     background-color: white;
     border: 0.25rem solid white;
@@ -242,18 +261,21 @@
     transition: all 0.3s ease-in-out;
 }
 
+
+
+
 /*НЕ СРАБАТЫВАЕТ СОСТОЯНИЕ CHECKED*/
-.slider-input:checked + .wrapper-circle .circle {
+.slider-input:checked .wrapper-circle .circle {
     opacity: 1;
     transition: all 0.3s ease-in-out;
 }
 
-.slider-input:checked ~ .wrapper-circle {
+.slider-input:checked .wrapper-circle {
     background-color: transparent;
     border: 0.25rem solid #17a0b3;
  }
  
-  .slider-input:checked ~ .wrapper-circle .circle {
+  .slider-input:checked .wrapper-circle .circle {
     opacity: 1;
     transition: all 0.3s ease-in-out;
  }
