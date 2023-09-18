@@ -1,0 +1,38 @@
+@media screen and (max-width: 768px) and (min-width: 500px){
+  .slide{
+    height: 50vh;
+  }
+  .wrapper-text-labels{
+    flex-direction: column-reverse;
+    align-items: center;
+    height: 38vh;
+    margin-top: 0;
+    justify-content: flex-end;
+  }
+  .wrapper-text{
+    /* margin-top: 5vh; */
+    width: 90vw;
+    height: auto;
+  }
+  .wrapper-labels{
+    height: auto;
+    /* margin-top: 5vh;
+    margin-bottom: 2vh; */
+    
+  }
+  .text-carusel{
+    margin-top: 0;;
+  }
+  
+  .labels{
+    margin-top: 0;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+  }
+  .text-slide{
+    width: 90vw;
+    overflow: hidden;
+    font-size: 1.3rem;
+  }
+}

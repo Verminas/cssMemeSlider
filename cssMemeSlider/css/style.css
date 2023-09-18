@@ -1,0 +1,230 @@
+.wrapper-page{
+    width: 100vw;
+    height: 100vh;
+    background: rgb(99,34,195);
+background: linear-gradient(278deg, rgba(99,34,195,1) 0%, rgba(45,241,253,1) 100%);
+    display: flex;
+    justify-content: center;
+    font-size: 12rem;
+    /* font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; */
+    font-family: Oswald, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.15rem;
+}
+.wrapper-memeslider{
+     width: 90vw;
+    height: 90vh; 
+    margin: auto auto;
+}
+.slider-input{
+    display: none;
+}
+.wrapper-slider{
+    border-radius: 15%;
+    display: flex;
+    display: flex;
+    transition: transform 0.5s;
+     overflow-x: hidden;
+
+     /*тень для контейнера со слайдерами, потом решу удалить или нет*/
+     box-shadow: inset 10rem 10rem 10rem rgba(255, 255, 255, 0.1), inset -10rem -10rem 10rem rgba(255, 255, 255, 0.1);
+    
+}
+.slide{
+    display: flex;
+    width: 90vw;
+    height: 70vh;
+    flex-shrink: 0;
+}
+
+.slide.one, .slide.two, .slide.three, .slide.four, .slide.five{
+    opacity: 0;
+    animation: fadeOut 0.5s ease-in-out;
+}
+
+.text-slide.one, .text-slide.two, .text-slide.three, .text-slide.four, .text-slide.five{
+    opacity: 0;
+    animation: fadeOut 0.5s ease-in-out;
+}
+
+.slide img{
+    width: auto;
+    height: auto;
+    border-radius: 3%;
+    margin: 0 auto;
+    padding: 0.4%;
+}
+.wrapper-text-labels{
+    margin-top: 2vh;
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    height: 18vh;
+    
+}
+.wrapper-text{
+    
+  width: 60vw;
+    height: 100%;
+    display: flex;
+     overflow-x: hidden;
+}
+.text-carusel{
+  margin-top: 3%;  
+  display: flex;
+    transition: all 0.5s ease-in-out;
+}
+.wrapper-labels{
+    width: 30vw;
+    height: 100%;
+    display: flex;
+} 
+.text-slide{
+    color: white;
+    font-size: 1.8rem;
+    width: 60vw;
+}
+
+/*для картинок при нажатии кнопок  */
+#slide1:checked ~ .wrapper-slider >.slide.one{
+    animation: fadeIn 0.5s ease-in-out forwards;
+    transform: translateX(0);
+ }
+ #slide2:checked ~ .wrapper-slider >.slide.two{
+    animation: fadeIn 0.5s ease-in-out forwards;
+    transform: translateX(-100%);
+  }
+  #slide3:checked ~ .wrapper-slider >.slide.three{
+    animation: fadeIn 0.7s ease-in-out forwards; 
+    transform: translateX(-200%);
+  }
+  #slide4:checked ~ .wrapper-slider >.slide.four{
+    animation: fadeIn 0.8s ease-in-out forwards; 
+    transform: translateX(-300%);
+  }
+  #slide5:checked ~ .wrapper-slider >.slide.five{
+    animation: fadeIn 0.9s ease-in-out forwards;
+    transform: translateX(-400%);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+/*для текста при нажатии кнопок */
+#slide1:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel > .text-slide.one{
+   transform: translateX(0);
+   animation: fadeIn 1s ease-in-out forwards;
+}
+#slide2:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel  >  .text-slide.two{
+    transform: translateX(-100%);
+    animation: fadeIn 1s ease-in-out forwards;
+ }
+ #slide3:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel  > .text-slide.three{
+    transform: translateX(-200%);
+    animation: fadeIn 1s ease-in-out forwards;
+ }
+ #slide4:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel  > .text-slide.four{
+    transform: translateX(-300%);
+    animation: fadeIn 1s ease-in-out forwards;
+ }
+ #slide5:checked ~ .wrapper-text-labels >.wrapper-text > .text-carusel  > .text-slide.five{
+    transform: translateX(-400%);
+    animation: fadeIn 1s ease-in-out forwards;
+ }
+
+
+ /*кнопки и состояния*/
+ .labels{
+  width: 100%;
+  display: flex;
+  gap: 2%;
+  padding: 1%;
+  margin-top: 3%;
+    
+}
+.labels label{
+    cursor: pointer;
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper-circle{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    border: 0.3rem solid #85a1f1;
+    /* background-color: #17a0b3; */
+
+    background: rgb(120,146,222);
+background: linear-gradient(254deg, rgba(120,146,222,1) 0%, rgba(45,234,253,1) 100%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    opacity: 0;
+    background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(229,253,29,1) 81%, rgba(69,232,252,1) 100%);
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.labels label:hover .wrapper-circle{
+  background: rgb(251,143,255);
+  background: linear-gradient(254deg, rgba(251,143,255,1) 0%, rgba(134,116,255,1) 100%);
+    border: 0.3rem solid white;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+.labels label:active .wrapper-circle{
+    border: 0.3rem solid white;
+    transition: all 0.5s ease-in-out;
+}
+.labels label:active .circle{
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+
+/*ДОЛГО МУЧИЛАСЬ, ЗАПОМНИ !!! CHECKED*/
+.slider-input[id="slide1"]:checked ~ .wrapper-text-labels label[for="slide1"] .wrapper-circle,
+.slider-input[id="slide2"]:checked ~ .wrapper-text-labels label[for="slide2"] .wrapper-circle,
+.slider-input[id="slide3"]:checked ~ .wrapper-text-labels label[for="slide3"] .wrapper-circle,
+.slider-input[id="slide4"]:checked ~ .wrapper-text-labels label[for="slide4"] .wrapper-circle,
+.slider-input[id="slide5"]:checked ~ .wrapper-text-labels label[for="slide5"] .wrapper-circle {
+    border: 0.3rem solid #76a5e9; 
+    transition: all 0.3s ease-in-out;
+    background: rgb(99,34,195);
+background: linear-gradient(278deg, rgba(99,34,195,1) 0%, rgba(45,241,253,1) 100%);
+}
+
+/* КНОПКА ВЫБРААН И НА НА НЕЕ НАВЕЛИСЬ*/
+.slider-input[id="slide1"]:checked ~ .wrapper-text-labels label[for="slide1"]:hover .wrapper-circle,
+.slider-input[id="slide2"]:checked ~ .wrapper-text-labels label[for="slide2"]:hover .wrapper-circle,
+.slider-input[id="slide3"]:checked ~ .wrapper-text-labels label[for="slide3"]:hover .wrapper-circle,
+.slider-input[id="slide4"]:checked ~ .wrapper-text-labels label[for="slide4"]:hover .wrapper-circle,
+.slider-input[id="slide5"]:checked ~ .wrapper-text-labels label[for="slide5"]:hover .wrapper-circle {
+    border: 0.3rem solid white;
+    transition: all 0.3s ease-in-out;
+    background: rgb(194,79,160);
+background: linear-gradient(254deg, rgba(194,79,160,1) 0%, rgba(74,87,154,1) 100%);
+}
